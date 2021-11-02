@@ -1,9 +1,9 @@
 import requests
 import json
 
+
 f = open('secrets.json')
 credentials = json.load(f)
-print(credentials)
 
 # note that CLIENT_ID refers to 'personal use script' and SECRET_TOKEN to 'token'
 auth = requests.auth.HTTPBasicAuth(credentials['api1'], credentials['api2'])
@@ -29,5 +29,13 @@ headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
 # while the token is valid (~2 hours) we just add headers=headers to our requests
 requests.get('https://oauth.reddit.com/api/v1/me', headers=headers)
 
-res = requests.get("https://oauth.reddit.com/r/wallstreetbets/search/?q=flair%3Adaily%20discussion&restrict_sr=1",
+res = requests.get("https://oauth.reddit.com/r/edmproduction/comments/qkgbba/i_really_need_vocals_but_i_dont_know_where_to/",
                    headers=headers)
+
+res_json = res.json()
+res_test = open('response_test.json', 'w')
+json.dump(res_json, res_test, indent = 6)
+
+for i in range(len(res_test)):
+        if res_test[i] == 'listing':
+                print(res_test[i])
