@@ -1,41 +1,52 @@
-import requests
+from pathlib import Path
+from pytrends.request import TrendReq
+import yfinance as yf
+import pandas as pd
 import json
+import time
+from datetime import date, timedelta
+dir_str = './wallstreetbets/'
+date_and_stock_dict = {}
+avg_dict = {}
+
+pathlist = Path(dir_str).glob('**/*.csv')
 
 
-f = open('secrets.json')
-credentials = json.load(f)
+def create_dict(date_and_stock_dict):
+    for path in pathlist:
+        stock = pd.read_csv(f"./{path}")
+        for index in range(len(stock.iloc[:, 0])):
+            if stock.iloc[:, 0][index] not in date_and_stock_dict:
+                date_and_stock_dict[str(stock.iloc[:, 0][index])
+                                    ] = [[str(str(path)[15::].split('.')[0]), int(stock.iloc[:, 1][index])]]
+            else:
+                date_and_stock_dict[str(stock.iloc[:, 0][index])
+                                    ] += [[str(str(path)[15::].split('.')[0]), int(stock.iloc[:, 1][index])]]
 
-# note that CLIENT_ID refers to 'personal use script' and SECRET_TOKEN to 'token'
-auth = requests.auth.HTTPBasicAuth(credentials['api1'], credentials['api2'])
+    with open('date_and_stock.json', 'w') as fp:
+        json.dump(date_and_stock_dict, fp)
 
-# here we pass our login method (password), username, and password
-data = {'grant_type': 'password',
-        'username': credentials['user'],
-        'password': credentials['password']}
 
-# setup our header info, which gives reddit a brief description of our app
-headers = {'User-Agent': 'bigbotman/0.0.1'}
+def generate_avg_dict(avg_dict):
+    f = open('date_and_stock.json')
+    data_dict = json.load(f)
+    for datestr in data_dict:
+        avg_val = 0
+        denom = 0
+        for stonk in data_dict[datestr]:
+            t = time.strptime(str(datestr), '%Y-%m-%d')
+            newdate = date(t.tm_year, t.tm_mon, t.tm_mday)+timedelta(1)
+            yfinance_data = yf.download(
+                stonk[0], start=datestr, end=newdate)
+            avg_val += (yfinance_data['Open'] + yfinance_data['High'] +
+                        yfinance_data['Low'] + yfinance_data['Close'] + yfinance_data['Adj Close']) / 5
+            denom += 1
 
-# send our request for an OAuth token
-res = requests.post('https://www.reddit.com/api/v1/access_token',
-                    auth=auth, data=data, headers=headers)
+        avg_dict[datestr] = {
+            'avg_price': avg_val / denom
+        }
+        with open('avg.json', 'w') as fp:
+            json.dump(avg_dict, fp)
 
-# convert response to JSON and pull access_token value
-TOKEN = res.json()['access_token']
 
-# add authorization to our headers dictionary
-headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
-
-# while the token is valid (~2 hours) we just add headers=headers to our requests
-requests.get('https://oauth.reddit.com/api/v1/me', headers=headers)
-
-res = requests.get("https://oauth.reddit.com/r/edmproduction/comments/qkgbba/i_really_need_vocals_but_i_dont_know_where_to/",
-                   headers=headers)
-
-res_json = res.json()
-res_test = open('response_test.json', 'w')
-json.dump(res_json, res_test, indent = 6)
-
-for i in range(len(res_test)):
-        if res_test[i] == 'listing':
-                print(res_test[i])
+generate_avg_dict(avg_dict)
