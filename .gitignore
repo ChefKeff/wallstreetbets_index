@@ -114,3 +114,6 @@ dmypy.json
 .pyre/
 
 /secrets.json
+
+/hejsan.csv
+/output_yfinance_data.csv
