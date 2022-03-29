@@ -1,0 +1,3 @@
+,Date,Sentiment,Normalized_Sentiment,Sentiment_Change_Percentual,Ticker,Open,High,Low,Close,Adj Close,Volume,Stock_Price_Change,Stock_Price_Change_Percent
+0,2017-03-06,11,0.11942105263157894,,UNC,36.0,36.0,36.0,36.0,36.0,0,,
+1,2018-06-04,1,0.05363157894736842,-0.4619852164730729,UNC,36.0,36.0,36.0,36.0,36.0,0,0.0,0.0

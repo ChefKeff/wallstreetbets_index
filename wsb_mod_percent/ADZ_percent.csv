@@ -1,0 +1,4 @@
+,Date,Sentiment,Normalized_Sentiment,Sentiment_Change_Percentual,Ticker,Open,High,Low,Close,Adj Close,Volume,Stock_Price_Change,Stock_Price_Change_Percent
+0,2020-07-21,1,0.001,,ADZ,37.0,37.0,37.0,37.0,37.0,0,,
+1,2021-01-29,5,1.001,999.9999999999999,ADZ,37.0,37.0,37.0,37.0,37.0,0,0.0,0.0
+2,2021-03-04,2,0.251,-0.7492507492507492,ADZ,37.0,37.0,37.0,37.0,37.0,0,0.0,0.0

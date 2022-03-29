@@ -2,7 +2,7 @@ from pathlib import Path
 from pytrends.request import TrendReq
 import yfinance as yf
 import pandas as pd
-import json
+import os
 dir_str_wsb = './wallstreetbets/'
 dir_str_vals = './stockvals/'
 dir_str_mod_wsb = './wsb_mod_percent/'
@@ -69,27 +69,43 @@ def create_mod_csv_wsb():
         # first file:
         for line in open(path):
             df = pd.read_csv(path)
-            df["normalized_sentiment"] = (
+            df[3] = (
                 df.iloc[:, 1] - df.iloc[:, 1].min()) / (df.iloc[:, 1].max() - df.iloc[:, 1].min())
             Ticker = str(str(path)[15::].split('.')[0])
-            df["ticker"] = Ticker
+            df[4] = Ticker
             with open(f'./wsb_mod/{Ticker}_mod.csv', 'w') as fp:
                 df.to_csv(fp)
 
 
 def create_mod_percent_csv_wsb():
     for path in pathlist:
-        fout = open("output_wsb_data.csv", "a")
-        # first file:
-        for line in open(path):
-            df = pd.read_csv(path)
-            df[2] = (
-                df.iloc[:, 1] - df.iloc[:, 1].min()) / (df.iloc[:, 1].max() - df.iloc[:, 1].min())
-            df[3] = df.iloc[:, 1].pct_change()
-            Ticker = str(str(path)[15::].split('.')[0])
-            df[4] = Ticker
+        df = pd.read_csv(path)
+        df.columns = ['Date', 'Sentiment']
+        df['Normalized_Sentiment'] = ((
+            df.iloc[:, 1] - df.iloc[:, 1].min()) / (df.iloc[:, 1].max() - df.iloc[:, 1].min())) + 0.001
+        df['Sentiment_Change_Percentual'] = df.iloc[:, 2].pct_change()
+        Ticker = str(str(path)[15::].split('.')[0])
+        df['Ticker'] = Ticker
+        try:
+            df2 = pd.read_csv(f'./stockvals/{Ticker}.csv')
+            output = pd.merge(df, df2,
+                              on='Date',
+                              how='inner')
+            output["Stock_Price_Change"] = output["High"].diff()
+            output["Stock_Price_Change_Percent"] = output["High"].pct_change()
             with open(f'./wsb_mod_percent/{Ticker}_percent.csv', 'w') as fp:
-                df.to_csv(fp)
+                output.to_csv(fp)
+        except:
+            print(Ticker, "was not in ./stockvals")
+            pass
+
+
+def remove_empty_csvs():
+    for path in pathlist_mod:
+        df = pd.read_csv(path)
+        if df.empty:
+            print(path)
+            os.remove(path)
 
 
 def create_big_csv_wsb():
@@ -98,6 +114,11 @@ def create_big_csv_wsb():
         # first file:
         for line in open(path):
             fout.write(line)
+
+
+def split_large_csv():
+    df = pd.read_csv('./rapidminerTest/testBigStonk9.csv')
+    print(df[4])
 
 
 # change so that it uses pytrends instead of yfinance
@@ -111,4 +132,4 @@ def get_google_trends():
                 yfinance_data.to_json(fp)
 
 
-create_big_csv_wsb()
+remove_empty_csvs()
