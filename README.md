@@ -14,7 +14,7 @@ Dependencies
 
 The r/wallstreetbets sentiment used is collected from [ApeWisdom](https://apewisdom.io/).
 
-Feel free to reach out if you have any questions - either through my [website](niklasnorinder.herokuapp.com) or just by shooting me an [email](mailto:niklas.norinder.4686@student.uu.se).
+Feel free to reach out if you have any questions - either through my [website](https://niklasnorinder.herokuapp.com) or just by shooting me an [email](mailto:niklas.norinder.4686@student.uu.se).
 
 /Niklas 🆒
 
