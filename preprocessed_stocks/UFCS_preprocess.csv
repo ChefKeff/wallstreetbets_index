@@ -1,0 +1,2 @@
+,Date,Sentiment,Normalized_Sentiment,Sentiment_Change_Percentual,Ticker,Open,High,Low,Close,Adj Close,Volume,UFCS_unscaled,UFCS_monthly,isPartial,scale,UFCS,Stock_Price_Change,Stock_Price_Change_Percent
+0,2021-01-27,1,,,UFCS,29.07999992370605,30.46999931335449,28.18000030517578,28.82999992370605,28.04047393798828,85700,0,32.0,,0.32,0.0,,
