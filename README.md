@@ -16,10 +16,15 @@ The r/wallstreetbets sentiment used is collected from [ApeWisdom](https://apewis
 
 Feel free to reach out if you have any questions - either through my [website](https://niklasnorinder.herokuapp.com) or just by shooting me an [email](mailto:niklas.norinder.4686@student.uu.se).
 
+Special thanks to 
+* The wonderful people at [ApeWisdom](https://apewisdom.io/) - helping me get the historical data from the stocks.
+* My supervisor Peter Ek for always providing great feedback
+* Fredrik Nilsson for listening to my non-stop rambling about machine learning
+
 /Niklas 🆒
 
 ## Stocks used with precision
-|FIELD1|Ticker|WSB precision MLP  |WSB precision RFC|Google Trends precision MLP|Google Trends precision RFC|
+|Index|Ticker|WSB precision MLP  |WSB precision RFC|Google Trends precision MLP|Google Trends precision RFC|
 |------|------|-------------------|-----------------|---------------------------|---------------------------|
 |0     |TLRY  |0.0                |0                |0                          |0.625                      |
 |1     |AM    |0.0                |0.375            |0                          |0.51                       |
