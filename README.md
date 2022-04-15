@@ -140,6 +140,3 @@ Special thanks to
 ### r/wallstreetbets and Google Trends combined
 ![image](https://user-images.githubusercontent.com/73639795/163565678-c0474472-72ed-4bcc-9ba1-ff6aa78453d8.png)
 ![image](https://user-images.githubusercontent.com/73639795/163565686-0de06dbb-82ad-4dbc-846a-b8904fac2020.png)
-
-### r/wallstreetbets and Google Trends combined
-### r/wallstreetbets and Google Trends combined
