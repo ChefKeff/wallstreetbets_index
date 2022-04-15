@@ -130,7 +130,7 @@ Special thanks to
 |101   |TLRY  |-                |-                |0.5                        |0                          |0.375                     |0.3333333333              |
 
 
-## Visualisation of data
+## Visualisation of data (unfiltered - with over/underfitting stocks included
 ### r/wallstreetbets
 ![image](https://user-images.githubusercontent.com/73639795/163565557-9694a2f0-ff66-4021-977c-cb3d38d515bf.png)
 ![image](https://user-images.githubusercontent.com/73639795/163565578-1f6f0a48-035f-4422-84a0-32ad2f126b11.png)
