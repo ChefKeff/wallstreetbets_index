@@ -128,3 +128,18 @@ Special thanks to
 |99    |CRM   |0.5947712418     |0.5582329317     |0.5743243243               |0.5364238411               |0.5925925926              |0.5361445783              |
 |100   |ROKU  |-                |-                |0.5217391304               |0.4615384615               |0.4479166667              |0.5263157895              |
 |101   |TLRY  |-                |-                |0.5                        |0                          |0.375                     |0.3333333333              |
+
+
+## Visualisation of data
+### r/wallstreetbets
+![image](https://user-images.githubusercontent.com/73639795/163565557-9694a2f0-ff66-4021-977c-cb3d38d515bf.png)
+![image](https://user-images.githubusercontent.com/73639795/163565578-1f6f0a48-035f-4422-84a0-32ad2f126b11.png)
+### Google Trends
+![image](https://user-images.githubusercontent.com/73639795/163565595-1b26bb7d-d7a3-452d-89b9-4917e3e53200.png)
+![image](https://user-images.githubusercontent.com/73639795/163565609-42b694a6-46a6-46eb-9deb-43790b02274b.png)
+### r/wallstreetbets and Google Trends combined
+![image](https://user-images.githubusercontent.com/73639795/163565678-c0474472-72ed-4bcc-9ba1-ff6aa78453d8.png)
+![image](https://user-images.githubusercontent.com/73639795/163565686-0de06dbb-82ad-4dbc-846a-b8904fac2020.png)
+
+### r/wallstreetbets and Google Trends combined
+### r/wallstreetbets and Google Trends combined
