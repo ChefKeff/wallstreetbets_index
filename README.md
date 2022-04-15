@@ -1,4 +1,4 @@
-# Herding vs WOC in stock prediction
+# 🧑‍🤝‍🧑 Herding 🧑‍🤝‍🧑 vs 🧠 WOC 🧠 in stock prediction
 
 Hello and welcome to the repo for my thesis in economics at Uppsala University. 
 The thesis looks at herding vs WOC in predicting stock market returns - using sentiment from r/wallstreetbets as the herding party and Google Trends data as the WOC component. 
@@ -18,10 +18,10 @@ Feel free to reach out if you have any questions - either through my [website](h
 
 Special thanks to 
 * The wonderful people at [ApeWisdom](https://apewisdom.io/) - helping me get the historical data from the stocks.
-* My supervisor Peter Ek for always providing great feedback
-* Fredrik Nilsson for listening to my non-stop rambling about machine learning
+* My supervisor Peter Ek for always providing great feedback.
+* Fredrik Nilsson for listening to my non-stop rambling about machine learning.
 
-/Niklas 🆒
+/Niklas Norinder 
 
 ## Stocks used with precision
 |Index|Ticker|WSB precision MLP  |WSB precision RFC|Google Trends precision MLP|Google Trends precision RFC|
