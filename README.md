@@ -3,7 +3,7 @@
 Hello and welcome to the repo for my thesis in economics at Uppsala University. 
 The thesis looks at herding vs WOC in predicting stock market returns - using sentiment from r/wallstreetbets as the herding party and Google Trends data as the WOC component. 
 
-The final thesis can be read [here](https://klockren.nu).
+The final thesis can be read [here](http://uu.diva-portal.org/smash/record.jsf?aq2=%5B%5B%5D%5D&c=5&af=%5B%5D&searchType=LIST_LATEST&sortOrder2=title_sort_asc&query=&language=en&pid=diva2%3A1682434&aq=%5B%5B%5D%5D&sf=all&aqe=%5B%5D&sortOrder=author_sort_asc&onlyFullText=false&noOfRows=50&dswid=-4660).
 
 Dependencies
 * [Pandas](https://pandas.pydata.org/)
@@ -14,7 +14,7 @@ Dependencies
 
 The r/wallstreetbets sentiment used is collected from [ApeWisdom](https://apewisdom.io/).
 
-Feel free to reach out if you have any questions - either through my [website](https://niklasnorinder.herokuapp.com) or just by shooting me an [email](mailto:niklas.norinder.4686@student.uu.se).
+Feel free to reach out if you have any questions - either through my [website](https://niklasnorinder.se) or just by shooting me an [email](mailto:niklas.norinder.4686@student.uu.se).
 
 Special thanks to 
 * The wonderful people at [ApeWisdom](https://apewisdom.io/) - helping me get the historical data from the stocks.
